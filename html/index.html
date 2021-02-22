@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+    />
+    <script
+      src="https://kit.fontawesome.com/a9ae631541.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.3.10/dist/vuetify.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+  </head>
+
+  <body class="body">
+    <v-app id="app">
+      <div id="vCardHolder" v-show="showUI">
+        <v-row id="gridbox" justify="space-around">
+          <div
+            class="ldBar"
+            id="health"
+            data-fill-dir="btt"
+            data-value="100"
+            data-preset="circle"
+            data-stroke="red"
+            data-stroke-width="5"
+            style="width: 55px; height: 55px"
+          ></div>
+
+          <div
+            class="ldBar"
+            id="armor"
+            data-fill-dir="btt"
+            data-value="100"
+            data-preset="circle"
+            data-stroke="#004eb3"
+            data-stroke-width="5"
+            style="width: 55px; height: 55px"
+          ></div>
+
+          <div
+            class="ldBar"
+            id="hunger"
+            data-value="100"
+            data-preset="circle"
+            data-stroke="#ffc412"
+            data-stroke-width="5"
+            style="width: 55px; height: 55px"
+          ></div>
+
+          <div
+            class="ldBar"
+            id="thirst"
+            data-value="100"
+            data-preset="circle"
+            data-stroke="#19a8e6"
+            data-stroke-width="5"
+            style="width: 55px; height: 55px"
+          ></div>
+
+          <div
+            class="ldBar"
+            id="stress"
+            data-value="100"
+            data-preset="circle"
+            data-stroke="#00ff1e"
+            data-stroke-width="5"
+            style="width: 55px; height: 55px"
+          ></div>
+        </v-row>
+      </div>
+    </v-app>
+    <div>
+      <img class="pic1white" src="./assets/whiteheart.svg" />
+      <img class="pic2white" src="./assets/whiteshield.svg" />
+      <img class="pic3white" src="./assets/whiteburger.svg" />
+      <img class="pic4white" src="./assets/whitewater.svg" />
+      <img class="pic5white" src="./assets/whitebrain.svg" />
+      <span class="dot1white"></span>
+      <span class="dot2white"></span>
+      <span class="dot3white"></span>
+      <span class="dot4white"></span>
+      <span class="dot5white"></span>
+
+      <!-- <img class="pic1black" src="./assets/heart.svg" />
+      <img class="pic2black" src="./assets/shield.svg" />
+      <img class="pic3black" src="./assets/burger.svg" />
+      <img class="pic4black" src="./assets/water.svg" />
+      <img class="pic5black" src="./assets/brain.svg" />
+      <span class="dot1black"></span>
+      <span class="dot2black"></span>
+      <span class="dot3black"></span>
+      <span class="dot4black"></span>
+      <span class="dot5black"></span> -->
+    </div>
+  </body>
+</html>
+<script src="libraries/axios.min.js"></script>
+<script src="libraries/vuetify.js"></script>
+<script src="libraries/vue.min.js"></script>
+<script src="libraries/loading-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js"></script>
+
+<script src="script.js"></script>

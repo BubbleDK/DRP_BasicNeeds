@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css?family=Cuprum&display=swap");
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: "Cuprum";
+  background-color: transparent !important;
+}
+
+#app {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#vCardHolder {
+  position: relative;
+  width: 14vw;
+  height: 17vh;
+  padding: 8px;
+  left: 11.2%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+}
+#gridbox {
+  position: absolute;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 1px;
+  margin: 0 auto;
+  left: 1%;
+  top: 13%;
+}
+#health {
+  stroke: pink;
+}
+
+.ldBar-label {
+  display: none;
+}
+
+.ldBar-label:after {
+  content: "";
+  display: inline;
+}
+.ldBar.no-percent .ldBar-label:after {
+  content: "";
+}
+
+.ldBar path.mainline {
+  stroke-width: 10;
+}
+.ldBar path.baseline {
+  stroke-width: 10;
+  stroke: #8f8f8f;
+}
+
+.pic1white {
+  z-index: 10;
+  position: fixed;
+  left: 4.23%;
+  top: 93.5%;
+  height: 62px;
+  width: 62px;
+}
+
+.pic2white {
+  z-index: 10;
+  position: fixed;
+  left: 6.94%;
+  top: 93.1%;
+  height: 69px;
+  width: 69px;
+}
+
+.pic3white {
+  z-index: 10;
+  position: fixed;
+  left: 9.8%;
+  top: 93.1%;
+  height: 69px;
+  width: 69px;
+}
+
+.pic4white {
+  z-index: 10;
+  position: fixed;
+  left: 12.46%;
+  top: 92.5%;
+  height: 80px;
+  width: 80px;
+}
+
+.pic5white {
+  z-index: 10;
+  position: fixed;
+  left: 15.6%;
+  top: 93.1%;
+  height: 69px;
+  width: 69px;
+}
+
+.dot1white {
+  z-index: 1;
+  position: fixed;
+  left: 4.763%;
+  top: 94.4%;
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot2white {
+  z-index: 9;
+  position: fixed;
+  left: 7.68%;
+  top: 94.4%;
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot3white {
+  z-index: 9;
+  position: fixed;
+  left: 10.57%;
+  top: 94.4%;
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot4white {
+  z-index: 9;
+  position: fixed;
+  left: 13.5%;
+  top: 94.4%;
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot5white {
+  z-index: 9;
+  position: fixed;
+  left: 16.4%;
+  top: 94.4%;
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* BLACK PICTURES 
+
+.pic1black {
+  z-index: 10;
+  position: fixed;
+  left: 4.25%;
+  top: 92.2%;
+  height: 60px;
+  width: 60px;
+}
+
+.pic2black {
+  z-index: 10;
+  position: fixed;
+  left: 8.2%;
+  top: 93.8%;
+  height: 25px;
+  width: 25px;
+}
+
+.pic3black {
+  z-index: 10;
+  position: fixed;
+  left: 11.15%;
+  top: 93.8%;
+  height: 22px;
+  width: 25px;
+}
+
+.pic4black {
+  z-index: 10;
+  position: fixed;
+  left: 14.06%;
+  top: 93.8%;
+  height: 22px;
+  width: 25px;
+}
+
+.pic5black {
+  z-index: 10;
+  position: fixed;
+  left: 17.1%;
+  top: 93.8%;
+  height: 22px;
+  width: 25px;
+}
+
+.dot1black {
+  z-index: 9;
+  position: fixed;
+  left: 4.86%;
+  top: 93.05%;
+  height: 40px;
+  width: 39px;
+  background-color: #3d3d3d;
+  border-radius: 50%;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #181818;
+  display: inline-block;
+}
+
+.dot2black {
+  z-index: 9;
+  position: fixed;
+  left: 7.7869%;
+  top: 93.05%;
+  height: 40px;
+  width: 39px;
+  background-color: #3d3d3d;
+  border-radius: 50%;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #181818;
+  display: inline-block;
+}
+
+.dot3black {
+  z-index: 9;
+  position: fixed;
+  left: 10.8%;
+  top: 93.05%;
+  height: 40px;
+  width: 39px;
+  background-color: #3d3d3d;
+  border-radius: 50%;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #181818;
+  display: inline-block;
+}
+
+.dot4black {
+  z-index: 9;
+  position: fixed;
+  left: 13.7%;
+  top: 93.05%;
+  height: 40px;
+  width: 39px;
+  background-color: #3d3d3d;
+  border-radius: 50%;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #181818;
+  display: inline-block;
+}
+
+.dot5black {
+  z-index: 9;
+  position: fixed;
+  left: 16.7%;
+  top: 93.05%;
+  height: 40px;
+  width: 39px;
+  background-color: #3d3d3d;
+  border-radius: 50%;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #181818;
+  display: inline-block;
+} */
