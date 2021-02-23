@@ -13,7 +13,7 @@ AddEventHandler("_status:saveData", function(Status)
 			query = "UPDATE characters SET `user_data` = :user_data WHERE `id` = :charid",
 			data = {
                 charid = character.charid,
-                user_data = json.encode({health = Status.health, hunger = Status.hunger, thirst = Status.thirst, armor = Status.armor, stress = Status.stress})
+                user_data = json.encode({hunger = Status.hunger, thirst = Status.thirst, stress = Status.stress})
 			}
 		}, function(results)
 		end)
@@ -32,16 +32,12 @@ AddEventHandler("_status:sendCharacterInfo", function()
 		data = {character_id = character.charid}
 	})
 	local PlayerData = json.decode(characterData["data"][1].user_data)
-    local CharacterHealth = PlayerData.health
 	local CharacterHunger = PlayerData.hunger
     local CharacterThirst = PlayerData.thirst
-    local CharacterArmor = PlayerData.armor
     local CharacterStress = PlayerData.stress
-    CharacterHealth = tonumber(CharacterHealth)
     CharacterHunger = tonumber(CharacterHunger)
     CharacterThirst = tonumber(CharacterThirst)
-    CharacterArmor = tonumber(CharacterArmor)
     CharacterStress = tonumber(CharacterStress)
     
-	TriggerClientEvent("_status:retrieveCharacterInfo", src, CharacterHealth, CharacterHunger, CharacterThirst, CharacterArmor, CharacterStress)
+	TriggerClientEvent("_status:retrieveCharacterInfo", src, CharacterHunger, CharacterThirst, CharacterStress)
 end)

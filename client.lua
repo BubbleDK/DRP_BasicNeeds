@@ -1,7 +1,5 @@
-local HealthValue = GetEntityHealth(GetPlayerPed(-1)) - 100
 local HungerValue = 100
 local ThirstValue = 100
-local ArmorValue = GetPedArmour(GetPlayerPed(-1))
 local StressValue = 0
 local status = nil
 ---------------------------------------------------------------------------
@@ -9,10 +7,8 @@ local status = nil
 ---------------------------------------------------------------------------
 RegisterNetEvent("_status:retrieveCharacterInfo")
 AddEventHandler("_status:retrieveCharacterInfo", function (CharacterHealth, CharacterHunger , CharacterThirst, CharacterArmor, CharacterStress)
-    HealthValue = CharacterHealth
     HungerValue = CharacterHunger
     ThirstValue = CharacterThirst
-    ArmorValue = CharacterArmor
     StressValue = CharacterStress
 end)
 
@@ -25,8 +21,9 @@ end)
 -- Hunger and thirst
 ---------------------------------------------------------------------------
 Citizen.CreateThread(function()
-  while true do 
-    local PlayerDead = IsEntityDead(PlayerPedId())
+  while true do
+    local plyPed = PlayerPedId()
+    local PlayerDead = IsEntityDead(plyPed)
     local tick = 150000 -- 2,5 minutes
     Citizen.Wait(tick)
     if not PlayerDead then
@@ -34,16 +31,16 @@ Citizen.CreateThread(function()
         HungerValue = HungerValue - 2
       else
         tick = 40000
-        ApplyDamageToPed(PlayerPedId(), 2, false)
-        print(GetEntityHealth(GetPlayerPed(-1)) - 100)
+        ApplyDamageToPed(plyPed, 2, false)
+        print(GetEntityHealth(plyPed) - 100)
       end
 
       if ThirstValue > 0 then
         ThirstValue = ThirstValue - 3
       else
         tick = 40000
-        ApplyDamageToPed(PlayerPedId(), 2, false)
-        print(GetEntityHealth(GetPlayerPed(-1)) - 100)
+        ApplyDamageToPed(plyPed, 2, false)
+        print(GetEntityHealth(plyPed) - 100)
       end
     else
       print("Stopped")
@@ -57,12 +54,13 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(300000)
+    local plyPed = PlayerPedId()
     local values =  {
-      health = HealthValue,
+      health = GetEntityHealth(plyPed) - 100,
       hunger = HungerValue,
       thirst = ThirstValue,
       stress = StressValue,
-      armor = ArmorValue,
+      armor = GetPedArmour(plyPed),
     }
     print('Data sent to DB')
 		TriggerServerEvent("_status:saveData", values)
@@ -75,13 +73,14 @@ end)
 Citizen.CreateThread(function()
     while true do
       Citizen.Wait(2500)
+      local plyPed = PlayerPedId()
       local values =  {
         show = true,
-        health = HealthValue,
+        health = GetEntityHealth(plyPed) - 100,
         hunger = HungerValue,
         thirst = ThirstValue,
         stress = StressValue,
-        armor = ArmorValue,
+        armor = GetPedArmour(plyPed),
       }
       TriggerEvent('_status:updateStatus', values)
     end
