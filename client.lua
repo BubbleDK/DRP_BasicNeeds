@@ -13,6 +13,25 @@ AddEventHandler("_status:retrieveCharacterInfo", function (CharacterHealth, Char
 end)
 
 ---------------------------------------------------------------------------
+-- Add Hunger
+---------------------------------------------------------------------------
+RegisterNetEvent("_status:addHungerValue")
+AddEventHandler("_status:addHungerValue", function(amount)
+  if HungerValue < 100 then
+    HungerValue = HungerValue + amount
+  end
+end)
+
+---------------------------------------------------------------------------
+-- Add Thirst
+---------------------------------------------------------------------------
+RegisterNetEvent("_status:addHungerValue")
+AddEventHandler("_status:addHungerValue", function(amount)
+  if ThirstValue < 100 then
+    ThirstValue = ThirstValue + amount
+  end
+end)
+---------------------------------------------------------------------------
 -- Stress
 ---------------------------------------------------------------------------
 -- TODO!!!
