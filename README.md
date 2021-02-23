@@ -56,4 +56,4 @@ AddEventHandler("DRP_ID:CreateCharacter", function(newCharacterData)
 end)
 ```
 
-#HUGE CREDIT TO Shinigami#5461, if it wasn't for him, this wouldn't have been made. Also credit to his work, which i've taken some inspiration from: #https://github.com/ioShinigami/status-hud
+# HUGE CREDIT TO Shinigami#5461, if it wasn't for him, this wouldn't have been made. Also credit to his work, which i've taken some inspiration from: # https://github.com/ioShinigami/status-hud
