@@ -46,7 +46,7 @@ AddEventHandler("DRP_ID:CreateCharacter", function(newCharacterData)
 			dirtycash = DRPCharacters.StartDirtyCash,				
 			licenses = json.encode({}),
 			playerid = playerData.playerid,
-			user_data = json.encode({health = "100", hunger = "100", thirst = "100", armor = "0", stress = "0"})
+			user_data = json.encode({hunger = "100", thirst = "100", stress = "0"})
 		}
 	})
 		TriggerEvent("DRP_ID:UpdateCharactersInUI", src)
