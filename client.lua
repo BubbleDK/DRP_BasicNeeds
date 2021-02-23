@@ -6,7 +6,7 @@ local status = nil
 -- Retrieve data from db, and apply to character.
 ---------------------------------------------------------------------------
 RegisterNetEvent("_status:retrieveCharacterInfo")
-AddEventHandler("_status:retrieveCharacterInfo", function (CharacterHealth, CharacterHunger , CharacterThirst, CharacterArmor, CharacterStress)
+AddEventHandler("_status:retrieveCharacterInfo", function (CharacterHunger, CharacterThirst, CharacterStress)
     HungerValue = CharacterHunger
     ThirstValue = CharacterThirst
     StressValue = CharacterStress
@@ -25,8 +25,8 @@ end)
 ---------------------------------------------------------------------------
 -- Add Thirst
 ---------------------------------------------------------------------------
-RegisterNetEvent("_status:addHungerValue")
-AddEventHandler("_status:addHungerValue", function(amount)
+RegisterNetEvent("_status:addThirstValue")
+AddEventHandler("_status:addThirstValue", function(amount)
   if ThirstValue < 100 then
     ThirstValue = ThirstValue + amount
   end
